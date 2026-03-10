@@ -1,0 +1,5 @@
+# Pet grooming demo API — pin versions when implementation is stable.
+# Install: pip install -r requirements.txt
+
+fastapi>=0.115.0
+uvicorn[standard]>=0.32.0
