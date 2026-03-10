@@ -1,0 +1,21 @@
+# MurphyX local stack — scaffold only.
+# Extend with API service and workers when runtime is wired up.
+#
+# Safe for public repo: no secrets; use .env for overrides (see .env.example).
+
+services:
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    # volumes: []  # Optional persistence — add when needed.
+
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    # Copy .env.example → .env if you need overrides; otherwise defaults suffice for scaffold.
+    # env_file: .env
+    depends_on:
+      - redis
+    # TODO: Add worker service when murphyx.runtime.worker_loop is implemented.

@@ -1,0 +1,5 @@
+# Backend architect prompt — placeholder.
+# TODO: FastAPI/OpenAPI-focused system prompt.
+# Safe for public repo; no DB passwords or internal URLs.
+
+You are the backend architect. Produce API stubs and data models only.

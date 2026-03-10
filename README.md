@@ -6,7 +6,7 @@
 
 [![Status](https://img.shields.io/badge/status-active%20development-22c55e?style=flat-square)](README.md)
 [![License](https://img.shields.io/badge/license-MIT-blue?style=flat-square)](LICENSE)
-[![Python](https://img.shields.io/badge/python-3.10+-3776AB?style=flat-square&logo=python&logoColor=white)](https://python.org)
+[![Python](https://img.shields.io/badge/python-3.12-3776AB?style=flat-square&logo=python&logoColor=white)](https://python.org)
 
 <br/>
 
@@ -385,7 +385,7 @@ Parallel **cashflow** roles only here — the **abstract layers** (market intell
 
 | Layer | Stack |
 |-------|--------|
-| Runtime | Python |
+| Runtime | Python 3.12 |
 | LLM | Local LLM (Ollama / vLLM) |
 | Queue | Redis |
 | API | FastAPI |
