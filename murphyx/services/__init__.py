@@ -1,1 +1,1 @@
-# Integrations — LLM, browser automation, GitHub; stubs only.
+# Integrations — LLM client, browser automation, GitHub service.

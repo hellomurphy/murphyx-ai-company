@@ -403,16 +403,30 @@ Parallel **cashflow** roles only here — the **abstract layers** (market intell
 
 ## 📂 Repository Structure
 
+| Path | Role |
+|------|------|
+| **`murphyx/`** | MurphyX **runtime framework** (canonical)—API, runtime, queue, agents, workflows, prompts, tools |
+| **`apps/`** | **Example AI companies** built on MurphyX (flagship: `pet-grooming-saas/`) |
+| **`examples/`** | **Quick-start** runnable scripts only—no duplicate of `apps/` |
+| **`docs/`** | Architecture documentation |
+
+**Rules:** Core framework lives under **`murphyx/`** only. **`artifacts/`** is runtime output—gitignored except `.gitkeep`. **`scripts/`** are dev tools only (no business logic).
+
 ```text
 murphyx-ai-company/
-├── agents/          # Role-based agent definitions
-├── workflows/       # Multi-step company workflows
-├── prompts/         # System & role prompts
-├── core/            # Orchestration & queue
-├── services/        # Integrations (automation, APIs)
-├── docs/            # Deep dives & ADRs
-└── examples/        # Runnable demos
+├── murphyx/           # framework core (includes api/, runtime/, queue/, agents/, …)
+├── apps/
+│   └── pet-grooming-saas/
+├── docs/
+├── tests/
+├── examples/          # quick start: run_company.py, run_single_agent.py, …
+├── scripts/           # dev only: run_worker.sh, dev_env.sh, start_redis.sh
+├── artifacts/         # ignored except .gitkeep
+├── pyproject.toml
+└── README.md
 ```
+
+*Phase next:* architecture diagram (agent → router → queue → worker → tools), workflow graph (PM → UX → FE → BE → QA), agent roster doc—see `docs/architecture.md`.
 
 ---
 

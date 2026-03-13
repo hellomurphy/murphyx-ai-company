@@ -1,21 +1,18 @@
-# MurphyX control API — scaffold image.
-# Build: docker build -t murphyx-api .
-# Run:   docker run -p 8000:8000 murphyx-api
-#
-# TODO: Multi-stage build, non-root user, and COPY murphyx/ when api imports runtime.
-# Safe for public repo — no secrets baked in.
+# MurphyX — multi-purpose image for API + worker.
+# Build: docker build -t murphyx .
+# API:   docker run -p 8000:8000 murphyx
+# Worker: docker run murphyx python -m murphyx.runtime.worker_loop
 
 FROM python:3.12-slim
 
 WORKDIR /app
 
-# Minimal deps for api/main.py only; extend when murphyx is wired.
-RUN pip install --no-cache-dir fastapi uvicorn[standard]
+COPY pyproject.toml .
+RUN pip install --no-cache-dir .
 
-COPY api ./api
+COPY murphyx ./murphyx
 
 ENV PYTHONPATH=/app
 EXPOSE 8000
 
-# TODO: Switch to gunicorn + uvicorn workers for production.
-CMD ["uvicorn", "api.main:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["uvicorn", "murphyx.api.main:app", "--host", "0.0.0.0", "--port", "8000"]

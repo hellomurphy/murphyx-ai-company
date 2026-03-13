@@ -3,9 +3,22 @@
 .env.local
 *.pem
 __pycache__/
+*.pyc
 .pytest_cache/
 .ruff_cache/
 .venv/
 venv/
 dist/
 *.egg-info/
+
+# Frontend build output
+.nuxt/
+node_modules/
+
+# OS
+.DS_Store
+
+# Artifacts — runtime output only; keep .gitkeep so directory exists
+artifacts/*
+!artifacts/.gitkeep
+*.cursorrules
