@@ -21,3 +21,4 @@ node_modules/
 # Artifacts — runtime output only; keep .gitkeep so directory exists
 artifacts/*
 !artifacts/.gitkeep
+*.cursorrules
