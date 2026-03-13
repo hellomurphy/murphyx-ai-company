@@ -6,4 +6,8 @@ Place **diagrams / screenshots** here, e.g.:
 - `workflow_graph.png`
 - `agent_company.png`
 
-TODO: Add images when design is finalized. Keep repo lightweight—optimize PNGs or use SVG.
+Guidelines:
+
+- Keep this directory **lightweight** — prefer SVG or optimized PNGs.
+- Only commit diagrams that are referenced from `README.md` or `docs/`.
+- Large/raw design files (Figma exports, etc.) should live **outside** the repo or in a separate design space.
