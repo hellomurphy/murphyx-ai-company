@@ -1,1 +1,1 @@
-# Runtime package — worker loop and role switching to be implemented.
+# Runtime package — worker loop, role switcher, and agent runtime facade.

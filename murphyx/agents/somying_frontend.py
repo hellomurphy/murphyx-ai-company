@@ -1,13 +1,27 @@
 """
-Somying — Frontend agent module (Nuxt-aligned).
+Saifah — Frontend developer agent module (Nuxt 3).
 
-Scaffold; pages and config live under apps/pet-grooming-saas when generated.
+Generates pages, components, and composables.
 """
 
-ROLE_ID = "somying_frontend"
+from __future__ import annotations
+
+from typing import Any
+
+from murphyx.runtime.role_switcher import bind_role, unbind_role
+from murphyx.services import llm_client
+
+ROLE_ID = "saifah_fe"
 
 
-def handle_task(payload: dict) -> dict:
-    """Frontend task handler — to be implemented."""
-    # TODO: Nuxt page generation / component stubs.
-    raise NotImplementedError
+async def handle_task(payload: dict[str, Any]) -> str:
+    """Generate Nuxt 3 frontend code from a task description."""
+    ctx = bind_role(ROLE_ID)
+    try:
+        return await llm_client.complete(
+            system=ctx.system_prompt,
+            user=str(payload),
+            max_tokens=ctx.token_budget,
+        )
+    finally:
+        unbind_role()

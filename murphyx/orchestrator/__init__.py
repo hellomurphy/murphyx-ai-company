@@ -1,1 +1,1 @@
-# Orchestrator package — CEO agent and task routing to be implemented.
+# Orchestrator package — CEO agent, task router, and planner.

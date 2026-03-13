@@ -1,1 +1,1 @@
-# Example workflows — automation graphs only; safe for public repo.
+# Workflows — build_saas, qa_pipeline, deploy_pipeline.

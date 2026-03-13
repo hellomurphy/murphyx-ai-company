@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""
-CLI — start local worker runtime (scaffold).
+"""Dev entry — start the MurphyX worker loop."""
 
-TODO: Invoke murphyx.runtime.worker_loop when ready.
-"""
+import asyncio
+
+from murphyx.runtime.worker_loop import run_worker_loop
 
 if __name__ == "__main__":
-    print("start_runtime — scaffold only; implementation TBD.")
+    asyncio.run(run_worker_loop())
